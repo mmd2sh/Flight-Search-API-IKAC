@@ -1,1 +1,130 @@
+.search-flights-wrap ~ input[type=submit] {
+    display: none;
+}
 
+.search-flights-wrap bdi,
+.fligt-details-modal, bdi {
+    font-family: tahoma;
+}
+
+.search-flights-wrap {
+	width: min(625px, calc(100% - 20px));
+	max-width: 100%;
+	border-radius: 8px;
+	background: #fff;
+	position: absolute;
+	transform: translateX(50%);
+	z-index: 9;
+	bottom: 18%;
+	right: 50%;
+}
+
+.search-flights-wrap::before {
+	content: '';
+	width: 128px;
+	height: 18px;
+	background: url("data:image/svg+xml,%3Csvg fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M71.3518 7.15407e-07C96.4345 2.18859e-06 98.506 19.8867 134.692 19.5806C170.877 19.2744 69.8382 20.1308 69.8382 20.1308C69.8382 20.1308 -27.5612 19.2988 8.04676 19.5809C43.6547 19.8631 46.2692 -7.57772e-07 71.3518 7.15407e-07Z'/%3E%3C/svg%3E%0A");
+	position: absolute;
+	bottom: 100%;
+	right: 11px;
+}
+
+.search-flight-input {
+	flex: 1;
+	max-height: none;
+	font-size: 18px !important;
+	padding: 10px 20px !important;
+	border: 0 !important;
+	outline: 0 !important;
+}
+
+.search-flight-btn {
+	display: inline-block;
+	width: 34px;
+	height: 30px;
+	font-size: 0;
+	margin: 0 20px;
+	background: url('image/search-flight.svg');
+}
+
+.search-flights-list {
+    width: 100%;
+    max-height: 250px;
+    border-radius: 0 0 8px 8px;
+    background: #fff;
+    position: absolute;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, .1);
+    overflow: auto;
+    z-index: 9;
+    top: 100%;
+}
+
+.search-flights-list:empty {
+    display: none; 
+}
+
+.search-flight-item {
+    display: none;
+}
+
+.search-flight-item.active {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: #666;
+    padding: 10px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.search-flight-item:hover {
+   color: #fff;
+   background: #03519f;
+}
+
+.search-flight-item-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-flight-item-col:not(:last-child) {
+    flex: 1;
+}
+
+.search-flight-item-col:last-child {
+    width: 26px;
+}
+
+.search-flight-item-remark\:departed {
+    color: #0353a2;
+}
+
+.search-flight-item-remark\:ontime,
+.search-flight-item-remark\:arrived {
+    color: green;
+}
+
+.search-flight-item-remark\:delayed,
+.search-flight-item-remark\:remove {
+    color: red;
+}
+
+.search-flight-item:hover [class*=search-flight-item-remark] {
+    color: #fff;
+}
+
+.fligt-details-table {
+    margin: 0;
+    border: 1px solid #ddd;
+}
+
+.flight-api-status i {
+    font-size: 14px;
+    margin: 0 3px;
+    animation-duration: .5s;
+    vertical-align: middle;
+}
+
+.flight-api-status-loading {
+    color: #0353a2;
+}
