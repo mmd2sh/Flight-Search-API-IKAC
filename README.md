@@ -1,2 +1,1 @@
-# flight-API-ikac
-Imam Khomeini Airport flight search api
+# Imam Khomeini Airport Flight Search API
