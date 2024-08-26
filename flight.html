@@ -1,1 +1,30 @@
 
+<div class="search-flights-wrap">
+    
+    <div class="search-flights-box uk-flex uk-flex-middle">
+        <input type="text" class="search-flight-input" placeholder="جستجوی پروازها...">
+    
+        <small class="flight-api-status">
+            <span class="flight-api-status-loading">
+                <i class="fa fa-circle-notch fa-spin"></i>
+                در حال دریافت اطلاعات پرواز.
+            </span>
+            <span class="flight-api-status-success uk-text-success" hidden>
+                <i class="fa fa-check"></i>
+                اطلاعات با موفقیت دریافت شد.
+            </span>
+            <span class="flight-api-status-fail uk-text-danger" hidden>
+                <i class="fa fa-times"></i>
+                عملیات با خطا مواجه شد.
+            </span>
+        </small>
+        
+        <a class="search-flight-btn" href="https://www.ikac.ir/default.aspx?tabid=39&amp;flysearchtext=" target="_blnak">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="31" viewBox="0 0 35 31">
+                <path fill="#0353A2" d="M32.1085 0.857755C31.987 0.858509 31.8654 0.862277 31.7438 0.869814C30.7408 0.924831 29.6999 1.15621 28.9477 1.52852L28.9325 1.53756L7.58141 10.5973L7.26988 10.4014C5.70313 9.39902 4.06722 8.38157 1.65934 7.98213C1.81663 8.33635 2.0119 8.72826 2.24897 9.15031C2.75729 10.0472 3.40846 11.0571 4.05355 11.9841C4.69864 12.9036 5.34221 13.7401 5.8171 14.2752C6.00022 14.4862 6.12255 14.5993 6.22892 14.6973L19.3131 9.52714L19.2219 10.6124C18.9408 13.9587 18.3633 17.3652 17.4363 20.8396L19.6018 19.4077C22.0789 15.5263 22.9071 12.8357 24.9966 7.55254L25.0878 7.32645L32.0401 3.52045H32.0553C33.7953 2.65449 34.5476 1.88877 34.6691 1.60916C34.7299 1.46898 34.7147 1.50591 34.6843 1.45541C34.6539 1.40567 34.5096 1.27528 34.2436 1.16525C33.8333 0.999444 33.1951 0.884887 32.4732 0.861523C32.3593 0.857755 32.2301 0.856248 32.1085 0.857755ZM10.6055 1.74256L8.9263 2.07417L15.3468 5.82666L19.9134 3.88974C17.3224 3.08784 14.4958 2.33569 10.6055 1.74256ZM0.910156 28.8661V30.2227H34.9503V28.8661H0.910156Z"/>
+            </svg>
+        </a>
+    </div>
+    
+    <ul class="search-flights-list"></ul>
+</div>
