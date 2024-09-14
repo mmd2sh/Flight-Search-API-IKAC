@@ -12,11 +12,6 @@
 	max-width: 100%;
 	border-radius: 8px;
 	background: #fff;
-	position: absolute;
-	transform: translateX(50%);
-	z-index: 9;
-	bottom: 18%;
-	right: 50%;
 }
 
 .search-flights-wrap::before {
@@ -116,6 +111,14 @@
 .fligt-details-table {
     margin: 0;
     border: 1px solid #ddd;
+}
+
+.flight-api-status {
+    border-radius: 8px;
+    background: #fff;
+    position: absolute;
+    bottom: 101%;
+    left: 0;
 }
 
 .flight-api-status i {
