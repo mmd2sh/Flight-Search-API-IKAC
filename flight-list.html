@@ -1,0 +1,108 @@
+<section class="flist-wrap">
+    <header class="flist-header uk-flex uk-flex-space-between uk-flex-middle">
+        <h4 class="flist-title uk-margin-remove">لیست پروازها</h4>
+        <a class="flist-update uk-button uk-button-primary"><small>بروزرسانی در ساعت <bdi>00:00</bdi></small></a>
+    </header>
+    
+    <div class="flist-filter uk-flex uk-flex-middle">
+        
+        <div class="flist-filter-search uk-flex uk-flex-middle">
+            <i class="fal fa-search"></i>
+            <input type="text" placeholder="شماره پرواز، شهر، شرکت هواپیمایی...">
+        </div>
+        
+        <div class="flist-filter-time uk-flex uk-flex-middle">
+            <i class="fal fa-clock"></i>
+            <input type="text" placeholder="از ساعت تا ساعت...">
+        </div>
+        
+        <div class="flist-filter-flew">
+            <label>
+                <input type="checkbox">
+                پرواز کرد
+            </label>
+        </div>
+        
+        <div class="flist-filter-delayed">
+            <label>
+                <input type="checkbox">
+                با تاخیر
+            </label>
+        </div>
+        
+    </div>
+    
+    <section class="flist-tabs">
+        <ul class="flist-tab-list uk-tab" data-uk-switcher="{
+            connect: '#flistTabs',
+            animation: 'slide-top'
+        }">
+            <li><a>
+                پروازهای خروجی
+                <i class="far fa-plane-departure"></i>
+            </a></li>
+            <li><a>
+                پروازهای ورودی
+                <i class="far fa-plane-arrival"></i>
+            </a></li>
+        </ul>
+        
+        <ul id="flistTabs" class="uk-switcher uk-overflow-hidden">
+            <li class="flist-outgoing-list-wrap">
+                
+                <header class="flist-list-header">
+                    <ul class="flist-list-header-labels">
+                        <li class="flist-header-label-airline">هواپیمایی</li>
+                        <li class="flist-header-label-flynumber">شماره پرواز</li>
+                        <li class="flist-header-label-destinition">مقصد</li>
+                        <li class="flist-header-label-date">تاریخ</li>
+                        <li class="flist-header-label-sh-time">طبق برنامه</li>
+                        <li class="flist-header-label-real-time">زمان واقعی</li>
+                        <li class="flist-header-label-description">وضعیت پرواز</li>
+                        <li class="flist-header-label-status">تا پرواز</li>
+                    </ul>
+                </header>
+                
+                <ul class="flist-outgoing-list"></ul>
+                
+                <div class="flist-api-status-loading uk-text-center uk-margin-large uk-margin-large-top">
+                    <i class="fa fa-fan fa-spin fa-2x"></i>
+                </div>
+                
+                <div class="flist-api-status-failed uk-text-danger uk-text-center uk-margin-large uk-margin-large-top" hidden>
+                    <i class="fa fa-times fa-2x"></i>
+                    <div>عملیات با خطا مواجه شد.</div>
+                </div>
+                
+            </li>
+            
+            <li class="flist-incoming-list-wrap">
+                
+                <header class="flist-list-header">
+                    <ul class="flist-list-header-labels">
+                        <li class="flist-header-label-airline">هواپیمایی</li>
+                        <li class="flist-header-label-flynumber">شماره پرواز</li>
+                        <li class="flist-header-label-destinition">مقصد</li>
+                        <li class="flist-header-label-date">تاریخ</li>
+                        <li class="flist-header-label-book-time">طبق برنامه</li>
+                        <li class="flist-header-label-real-time">زمان واقعی</li>
+                        <li class="flist-header-label-description">وضعیت پرواز</li>
+                        <li class="flist-header-label-status">تا پرواز</li>
+                    </ul>
+                </header>
+                
+                <ul class="flist-incoming-list"></ul>
+                
+                <div class="flist-api-status-loading uk-text-center uk-margin-large uk-margin-large-top">
+                    <i class="fa fa-fan fa-spin fa-2x"></i>
+                </div>
+                
+                <div class="flist-api-status-failed uk-text-danger uk-text-center uk-margin-large uk-margin-large-top" hidden>
+                    <i class="fa fa-times fa-2x"></i>
+                    <div>عملیات با خطا مواجه شد.</div>
+                </div>
+
+            </li>
+        </ul>
+    </section>
+</section>
