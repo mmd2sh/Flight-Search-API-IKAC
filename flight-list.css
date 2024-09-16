@@ -1,0 +1,203 @@
+.flist-wrap ~ input[type=submit] {
+    display: none;
+}
+
+.flist-wrap bdi {
+    font-family: tahoma;
+}
+
+.flist-wrap {
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background: #fff;
+    position: relative;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.flist-header {
+    padding: 15px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.flist-filter {
+    padding: 40px 20px;
+    gap: 10px;
+}
+
+.flist-filter-search {
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.flist-filter-search i {
+    width: 25px;
+    text-align: center;
+}
+
+.flist-filter-search input {
+    width: 250px;
+    border: 0;
+    border-radius: 0;
+    border-right: 1px solid #ddd; 
+}
+
+.flist-filter-time {
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    position: relative;
+}
+
+.flist-filter-time i {
+    width: 25px;
+    text-align: center;
+}
+
+.flist-filter-time input {
+    width: 110px;
+    border: 0;
+    border-radius: 0;
+    border-right: 1px solid #ddd; 
+}
+
+.flist-list-item {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    transition: .3s;
+}
+
+.flist-incoming-list-wrap .flist-list-item {
+    grid-template-columns: repeat(9, 1fr);
+}
+
+.flist-list-item:hover {
+    background: #eaf9ff;
+}
+
+.flist-list-item-col {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #f4f4f4;
+}
+
+.flist-tab-list > li > a {
+    color: #333;
+    padding: 15px !important;
+}
+
+.flist-tab-list > li.uk-active > a {
+    background: #fcfbfc;
+}
+
+.flist-tab-list > li > a i {
+    color: #00a8e6;
+    font-size: 20px;
+}
+
+.flist-filter-time-list {
+    display: flex;
+    justify-content: space-around;
+    gap: 18px;
+    width: 180px;
+    height: 160px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+    position: fixed;
+    box-sizing: border-box;
+    pointer-events: none;
+    transition: .3s;
+    overflow: auto;
+    opacity: 0;
+    top: 100%;
+    right: 0;
+}
+
+.flist-filter-time:hover .flist-filter-time-list {
+    position: absolute;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.flist-filter-time-list::before {
+    content: '';
+    height: 100%;
+    border-right: 1px solid #dddddd;
+    position: absolute;
+    right: 50%;
+    top: 0;
+}
+
+.flist-filter-time-list > ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.flist-filter-time-list > ul > li {
+    flex: 1;
+    text-align: center;
+    border-radius: 5px;
+    background: #f5f4f4;
+    cursor: pointer;
+}
+
+.flist-filter-time-list > ul > li.active {
+    color: #fff;
+    background: #808080;
+}
+
+.flist-filter-time-list > ul > li:hover {
+    background: #d8d5d5;
+}
+
+.flist-list-header-labels {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background: #fcfbfc;
+    padding-left: 8px;
+}
+
+.flist-incoming-list-wrap .flist-list-header-labels {
+    grid-template-columns: repeat(9, 1fr);
+}
+
+.flist-list-header-labels > li {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #f4f4f4;
+}
+
+.flist-incoming-list,
+.flist-outgoing-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow-y: scroll;
+}
+
+.flist-incoming-list:not(:empty),
+.flist-outgoing-list:not(:empty) {
+    height: 400px;
+}
+
+.flist-list-item-airline-details {
+    color: #000;
+    font-size: 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 10px;
+}
+
+.flist-list-item-airline-details img {
+    margin-bottom: 5px;
+}
