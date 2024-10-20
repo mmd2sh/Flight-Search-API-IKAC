@@ -3,18 +3,37 @@
         window.mbFlightScriptInited = true;
         
         $('.search-flights-wrap').each(function(_, wrap) {
-            var input = $('.search-flight-input', wrap);
-            var url = input.attr('href');
             
+            let incomingFlightsApiUrl = $('[data-dbfield=incomingFlightsApiUrl]', wrap).val();
+            let outgoingFlightsApiUrl = $('[data-dbfield=outgoingFlightsApiUrl]', wrap).val();
+            let flightsListPageUrl = $('[data-dbfield=flightsListPageUrl]', wrap).val();
+            
+            // fetch incoming flight list
+            if (incomingFlightsApiUrl) {
+                fetchData(incomingFlightsApiUrl, 'incoming');
+            } else {
+                alert('آدرس وب سرویساشتباه است.');
+            }
+            
+            // fetch outgoing flight list
+            if (outgoingFlightsApiUrl) {
+                fetchData(outgoingFlightsApiUrl, 'outgoing');
+            } else {
+                alert('آدرس وب سرویساشتباه است.');
+            }
+            
+            var input = $('.search-flight-input', wrap);
+            $('.search-flight-btn', wrap).attr('href', flightsListPageUrl);
+
             input.on('change input paste keypress keyup', function(ev) {
                 var key = ev.keyCode || ev.which;
                 
                 if (key === 13) { // if enter pressed
                     ev.preventDefault();
-                    $('.search-flight-btn')[0].click();
+                    $('.search-flight-btn', wrap)[0].click();
                 }
                 
-                $('.search-flight-btn').attr('href', url + this.value);
+                $('.search-flight-btn', wrap).attr('href', flightsListPageUrl + '?term=' + this.value);
                 
                 if (ev.type == 'keyup') {
                     var val = this.value.trim().toLowerCase();
@@ -34,14 +53,6 @@
             });
             
             $('.search-flights-list', wrap).html('');
-            
-            // fetch type a data
-            fetchData('https://87.107.20.9/inf/?typf=A');
-            
-            // fetch type b data
-            setTimeout(function() {
-                fetchData('https://87.107.20.9/inf/?typf=B');
-            }, 1000);
             
             // API fetch
             function fetchData(url) {
