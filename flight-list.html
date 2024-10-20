@@ -1,10 +1,15 @@
 <section class="flist-wrap">
+    <div hidden style="display:none!important">
+        {{incomingFlightsApiUrl}}
+        {{outgoingFlightsApiUrl}}
+        {{airlinesLogosFolder}}
+    </div>
     <header class="flist-header uk-flex uk-flex-space-between uk-flex-middle">
         <h4 class="flist-title uk-margin-remove">لیست پروازها</h4>
-        <a class="flist-update uk-button uk-button-primary"><small>بروزرسانی در ساعت <bdi>00:00</bdi></small></a>
+        <a class="flist-update uk-button uk-button-primary"><small>بروزرسانی در ساعت <span><i class="fal fa-fan fa-spin"></i></span></small></a>
     </header>
     
-    <div class="flist-filter uk-flex uk-flex-middle">
+    <div class="flist-filter uk-flex uk-flex-middle uk-flex-wrap">
         
         <div class="flist-filter-search uk-flex uk-flex-middle">
             <i class="fal fa-search"></i>
@@ -13,20 +18,21 @@
         
         <div class="flist-filter-time uk-flex uk-flex-middle">
             <i class="fal fa-clock"></i>
-            <input type="text" placeholder="از ساعت تا ساعت...">
+            <input type="text" readonly placeholder="از ساعت تا ساعت...">
+            <a class="flist-filter-time-clear"><i class="fa fa-times"></i></a>
         </div>
         
         <div class="flist-filter-flew">
             <label>
-                <input type="checkbox">
                 پرواز کرد
+                <input type="checkbox">
             </label>
         </div>
         
         <div class="flist-filter-delayed">
             <label>
-                <input type="checkbox">
                 با تاخیر
+                <input type="checkbox">
             </label>
         </div>
         
@@ -37,11 +43,11 @@
             connect: '#flistTabs',
             animation: 'slide-top'
         }">
-            <li><a>
+            <li class="flist-tab-outgoing"><a>
                 پروازهای خروجی
                 <i class="far fa-plane-departure"></i>
             </a></li>
-            <li><a>
+            <li class="flist-tab-incoming"><a>
                 پروازهای ورودی
                 <i class="far fa-plane-arrival"></i>
             </a></li>
@@ -82,11 +88,12 @@
                     <ul class="flist-list-header-labels">
                         <li class="flist-header-label-airline">هواپیمایی</li>
                         <li class="flist-header-label-flynumber">شماره پرواز</li>
-                        <li class="flist-header-label-destinition">مقصد</li>
+                        <li class="flist-header-label-from">مبدا</li>
                         <li class="flist-header-label-date">تاریخ</li>
                         <li class="flist-header-label-book-time">طبق برنامه</li>
                         <li class="flist-header-label-real-time">زمان واقعی</li>
                         <li class="flist-header-label-description">وضعیت پرواز</li>
+                        <li class="flist-header-label-description">نقاله</li>
                         <li class="flist-header-label-status">تا پرواز</li>
                     </ul>
                 </header>
